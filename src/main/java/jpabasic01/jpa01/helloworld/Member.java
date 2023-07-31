@@ -1,14 +1,15 @@
 package jpabasic01.jpa01.helloworld;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Getter @Setter
@@ -16,8 +17,25 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Member {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "name")
     private String name;
+
+//    @Enumerated(EnumType.ORDINAL)
+//    private Grade grade;
+//
+//    @Temporal(TemporalType.TIMESTAMP)
+//    private Date createdAt;
+//
+//    @Temporal(TemporalType.TIMESTAMP)
+//    private Date modifiedAt;
+//
+//    @Lob
+//    private String description;
+//
+//    @Transient
+//    private Integer temp;
 
     @Override
     public String toString() {
