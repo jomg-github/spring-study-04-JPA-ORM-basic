@@ -7,39 +7,35 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
-
 @Entity
+@Table(name = "TMP_PLAYER")
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Member {
+public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "PLAYER_ID")
     private Long id;
-    @Column(name = "name")
     private String name;
 
-//    @Enumerated(EnumType.ORDINAL)
-//    private Grade grade;
-//
-//    @Temporal(TemporalType.TIMESTAMP)
-//    private Date createdAt;
-//
-//    @Temporal(TemporalType.TIMESTAMP)
-//    private Date modifiedAt;
-//
-//    @Lob
-//    private String description;
-//
-//    @Transient
-//    private Integer temp;
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
+    public Player(String name, Team team) {
+        this.name = name;
+        this.team = team;
+    }
+
+    public void changeTeam(Team team) {
+        this.team = team;
+        team.getPlayers().add(this);
+    }
 
     @Override
     public String toString() {
-        return "Member{" +
+        return "Player{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
