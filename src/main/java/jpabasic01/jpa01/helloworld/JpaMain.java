@@ -18,46 +18,23 @@ public class JpaMain {
             Team team = new Team("AT 마드리드");
             em.persist(team);
 
+            Locker locker = new Locker();
+            locker.setName("모라타의 라커");
+            em.persist(locker);
+
             Player player = new Player();
             player.setName("모라타");
-//            player.setTeam(team);
+            player.setLocker(locker);
             player.changeTeam(team);
             em.persist(player);
 
             tx.commit();
         } catch (Exception e) {
+            e.printStackTrace();
             tx.rollback();
         } finally {
             em.close();
         }
         emf.close();
     }
-
-//    /**
-//     * 회원 수정
-//     */
-//    private static void update(EntityManager em, Long id, String name) {
-//        Player player = findById(em, id);
-//        player.setName(name);
-//    }
-//
-//    /**
-//     * 회원 조회
-//     */
-//    private static Player findById(EntityManager em, Long id) {
-//        Player player = em.find(Player.class, id);
-//        System.out.println("member = " + player);
-//        return player;
-//    }
-//
-//    /**
-//     * 회원 등록
-//     */
-//    private static Player createMember(EntityManager em, Long id, String name) {
-//        Player player = new Player();
-//        player.setId(id);
-//        player.setName(name);
-//        em.persist(player);
-//        return player;
-//    }
 }

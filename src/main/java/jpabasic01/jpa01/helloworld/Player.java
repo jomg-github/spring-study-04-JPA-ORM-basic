@@ -23,6 +23,10 @@ public class Player {
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+
     public Player(String name, Team team) {
         this.name = name;
         this.team = team;

@@ -5,6 +5,7 @@
     <persistence-unit name="hello">
         <class>jpabasic01.jpa01.helloworld.Player</class>
         <class>jpabasic01.jpa01.helloworld.Team</class>
+        <class>jpabasic01.jpa01.helloworld.Locker</class>
         <class>jpabasic01.jpa01.practice.domain.Item</class>
         <class>jpabasic01.jpa01.practice.domain.Member</class>
         <class>jpabasic01.jpa01.practice.domain.Order</class>
