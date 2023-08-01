@@ -10,6 +10,8 @@
         <class>jpabasic01.jpa01.practice.domain.Member</class>
         <class>jpabasic01.jpa01.practice.domain.Order</class>
         <class>jpabasic01.jpa01.practice.domain.OrderItem</class>
+        <class>jpabasic01.jpa01.practice.domain.Category</class>
+        <class>jpabasic01.jpa01.practice.domain.Delivery</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>

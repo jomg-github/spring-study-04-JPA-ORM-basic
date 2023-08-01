@@ -28,7 +28,7 @@ public class PracticeMain {
 //            // 3. 회원 조회
 //            Member member = em.find(Member.class, memberId);
 
-            Order order = em.find(Order.class, 1L);
+//            Order order = em.find(Order.class, 1L);
 
             tx.commit();
         } catch (Exception e) {
