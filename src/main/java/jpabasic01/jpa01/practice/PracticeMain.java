@@ -18,15 +18,17 @@ public class PracticeMain {
         tx.begin();
 
         try {
-            // 주문한 회원 찾기
-            // 1. 주문 조회
+//            // 주문한 회원 찾기
+//            // 1. 주문 조회
+//            Order order = em.find(Order.class, 1L);
+//
+//            // 2. 주문의 회원 ID값 조회
+//            Long memberId = order.getMemberId();
+//
+//            // 3. 회원 조회
+//            Member member = em.find(Member.class, memberId);
+
             Order order = em.find(Order.class, 1L);
-
-            // 2. 주문의 회원 ID값 조회
-            Long memberId = order.getMemberId();
-
-            // 3. 회원 조회
-            Member member = em.find(Member.class, memberId);
 
             tx.commit();
         } catch (Exception e) {
