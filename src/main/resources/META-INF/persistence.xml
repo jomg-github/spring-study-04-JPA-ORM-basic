@@ -3,10 +3,13 @@
              xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="hello">
-        <class>jpabasic01.jpa01.helloworld.Player</class>
-        <class>jpabasic01.jpa01.helloworld.Team</class>
-        <class>jpabasic01.jpa01.helloworld.Locker</class>
-        <class>jpabasic01.jpa01.practice.domain.Item</class>
+<!--        <class>jpabasic01.jpa01.helloworld.Player</class>-->
+<!--        <class>jpabasic01.jpa01.helloworld.Team</class>-->
+<!--        <class>jpabasic01.jpa01.helloworld.Locker</class>-->
+        <class>jpabasic01.jpa01.practice.domain.item.Item</class>
+        <class>jpabasic01.jpa01.practice.domain.item.Album</class>
+        <class>jpabasic01.jpa01.practice.domain.item.Book</class>
+        <class>jpabasic01.jpa01.practice.domain.item.Movie</class>
         <class>jpabasic01.jpa01.practice.domain.Member</class>
         <class>jpabasic01.jpa01.practice.domain.Order</class>
         <class>jpabasic01.jpa01.practice.domain.OrderItem</class>

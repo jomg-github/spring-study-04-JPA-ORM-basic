@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "TB_ORDER")
 @Getter @Setter
-public class Order {
+public class Order extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ORDER_ID")
     private Long id;

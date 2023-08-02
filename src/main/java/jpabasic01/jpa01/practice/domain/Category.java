@@ -1,5 +1,6 @@
 package jpabasic01.jpa01.practice.domain;
 
+import jpabasic01.jpa01.practice.domain.item.Item;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +11,7 @@ import java.util.List;
 @Entity
 @Table(name = "TB_CATEGORY")
 @Getter @Setter
-public class Category {
+public class Category extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CATEGORY_ID")
