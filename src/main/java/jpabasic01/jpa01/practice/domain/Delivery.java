@@ -20,6 +20,6 @@ public class Delivery extends BaseTimeEntity {
 
     private String zipcode;
 
-    @OneToOne(mappedBy = "delivery")
+    @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY)
     private Order order;
 }
