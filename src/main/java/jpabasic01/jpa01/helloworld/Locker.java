@@ -21,6 +21,6 @@ public class Locker {
 
     private String name;
 
-    @OneToOne(mappedBy = "locker")
-    private Player player;
+//    @OneToOne(mappedBy = "locker")
+//    private Player player;
 }

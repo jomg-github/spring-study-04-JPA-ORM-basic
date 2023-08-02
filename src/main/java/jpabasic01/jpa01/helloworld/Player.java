@@ -19,13 +19,13 @@ public class Player {
     private Long id;
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
-    @OneToOne
-    @JoinColumn(name = "LOCKER_ID")
-    private Locker locker;
+//    @OneToOne
+//    @JoinColumn(name = "LOCKER_ID")
+//    private Locker locker;
 
     public Player(String name, Team team) {
         this.name = name;

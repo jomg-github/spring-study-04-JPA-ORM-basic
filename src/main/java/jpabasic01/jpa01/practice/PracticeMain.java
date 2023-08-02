@@ -1,5 +1,6 @@
 package jpabasic01.jpa01.practice;
 
+import jpabasic01.jpa01.helloworld.Team;
 import jpabasic01.jpa01.practice.domain.Member;
 import jpabasic01.jpa01.practice.domain.item.Album;
 import jpabasic01.jpa01.practice.domain.item.Item;
@@ -21,6 +22,9 @@ public class PracticeMain {
         tx.begin();
 
         try {
+            Team team = new Team("레알 마드리드");
+            em.persist(team);
+
             Member member = new Member();
             member.setName("조민기");
             member.setCreatedAt(LocalDateTime.now());
