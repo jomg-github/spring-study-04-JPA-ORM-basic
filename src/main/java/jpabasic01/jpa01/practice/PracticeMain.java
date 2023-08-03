@@ -1,6 +1,7 @@
 package jpabasic01.jpa01.practice;
 
 import jpabasic01.jpa01.helloworld.Team;
+import jpabasic01.jpa01.practice.domain.Address;
 import jpabasic01.jpa01.practice.domain.Member;
 import jpabasic01.jpa01.practice.domain.item.Album;
 import jpabasic01.jpa01.practice.domain.item.Item;
@@ -22,15 +23,19 @@ public class PracticeMain {
         tx.begin();
 
         try {
-            Team team = new Team("레알 마드리드");
-            em.persist(team);
-
             Member member = new Member();
             member.setName("조민기");
             member.setCreatedAt(LocalDateTime.now());
             member.setModifiedAt(LocalDateTime.now());
+            member.setAddress(new Address("경기도", "광교중앙로 145", "16508"));
 
             em.persist(member);
+            em.flush();
+            em.clear();
+
+            Member member1 = em.getReference(Member.class, member.getId());
+
+//            System.out.println("address1.equals(address2) = " + address1.equals(address2));
 
             tx.commit();
         } catch (Exception e) {
