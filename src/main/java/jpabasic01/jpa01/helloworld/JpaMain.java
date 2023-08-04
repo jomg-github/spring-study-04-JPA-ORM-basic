@@ -1,6 +1,5 @@
 package jpabasic01.jpa01.helloworld;
 
-import jpabasic01.jpa01.practice.domain.Member;
 import org.hibernate.Hibernate;
 import org.hibernate.jpa.internal.PersistenceUnitUtilImpl;
 
