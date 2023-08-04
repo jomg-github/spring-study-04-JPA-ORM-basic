@@ -12,6 +12,10 @@ import lombok.Setter;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@NamedQuery(
+        name = "Player.findByName",
+        query = "select p from Player p where p.name like CONCAT('%', :name, '%')"
+)
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

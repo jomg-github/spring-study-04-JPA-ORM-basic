@@ -1,5 +1,7 @@
 package jpabasic01.jpa01.practice;
 
+import jpabasic01.jpa01.helloworld.Player;
+import jpabasic01.jpa01.helloworld.Team;
 import jpabasic01.jpa01.practice.domain.Address;
 import jpabasic01.jpa01.practice.domain.Member;
 
@@ -16,13 +18,13 @@ public class PracticeMain {
         tx.begin();
 
         try {
-            Member member = new Member();
-            member.setName("조민기");
-            member.setAge(31);
-            member.setAddress(new Address("경기도", "광교중앙로 145", "16508"));
-            em.persist(member);
+//            Member member = new Member();
+//            member.setName("조민기");
+//            member.setAge(31);
+//            member.setAddress(new Address("경기도", "광교중앙로 145", "16508"));
+//            em.persist(member);
 
-            createMembers(em, 1000);
+//            createMembers(em, 1000);
 
             // JPQL
 //            TypedQuery<Member> query = em.createQuery("select m from Member m where m.address.city = :city", Member.class);
@@ -47,14 +49,12 @@ public class PracticeMain {
 //            query.setParameter("memberId", member.getId());
 //            MemberDTO result = query.getSingleResult();
 
-            TypedQuery<Member> query = em.createQuery("select m from Member m order by m.age desc", Member.class);
-            query.setFirstResult(0);
-            query.setMaxResults(100);
-            List<Member> result = query.getResultList();
+//            TypedQuery<Member> query = em.createQuery("select m from Member m order by m.age desc", Member.class);
+//            query.setFirstResult(0);
+//            query.setMaxResults(100);
+//            List<Member> result = query.getResultList();
 
-            result.forEach(System.out::println);
-
-            System.out.println("result = " + result);
+//            System.out.println("result = " + result);
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
